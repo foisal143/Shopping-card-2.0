@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.1/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Shoping Card</title>
+  <style>
+    figure img {
+      height: 170px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar shadow-lg md:px-12 bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="form-control">
+          <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+        </div>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="https://picsum.photos/seed/picsum/200/300" />
+            </div>
+          </label>
+          <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class=" px-12 my-12 flex flex-col md:flex-row">
+      <div class="card-section grid gap-5 w-full md:w-[65%] md:grid-cols-3">
+        <div class="card w-full bg-base-100 shadow-xl">
+          <figure><img src="img/coffee.jpg " alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 id="ctext" class="card-title">Coffee JS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Price: $<span id="cPrice">110</span></p>
+            <p>Quentity: <span id="cQun">5</span></p>
+            <div class="card-actions justify-end">
+              <button id="coffeeBtn" class="btn btn-primary">ADD TO CARD</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-full bg-base-100 shadow-xl">
+          <figure><img src="img/heart_js.jpg " alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 id="htext" class="card-title">Heart JS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Price: $<span id="hPrice">200</span></p>
+            <p>Quentity: <span id="hQun">10</span></p>
+            <div class="card-actions justify-end">
+              <button id="hBtn" class="btn btn-primary">ADD TO CARD</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-full bg-base-100 shadow-xl">
+          <figure><img src="img/panda.png " alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 id="ptext" class="card-title">Panda JS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Price: $<span id="pPrice">250</span></p>
+            <p>Quentity: <span id="pQun">4</span></p>
+            <div class="card-actions justify-end">
+              <button id="pBtn" class="btn btn-primary">ADD TO CARD</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-full bg-base-100 shadow-xl">
+          <figure><img src="img/umbrella.png " alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 id="utext" class="card-title">Umbrella JS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Price: $<span id="uPrice">100</span></p>
+            <p>Quentity: <span id="uQun">6</span></p>
+            <div class="card-actions justify-end">
+              <button id="uBtn" class="btn btn-primary">ADD TO CARD</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-full bg-base-100 shadow-xl">
+          <figure><img src="img/vue-js.jpg " alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 id="vtext" class="card-title">Vue JS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <input id="vPrice" type="text" placeholder="Price" class="input input-bordered input-sm w-full max-w-xs" />
+            <input id="vQun" type="text" placeholder="Quentity" class="input input-bordered input-sm w-full max-w-xs" />
+            <div class="card-actions justify-end">
+              <button id="vBtn" class="btn btn-primary">ADD TO CARD</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="data-section w-full  md:w-[40%] ms-5 ">
+        <h2 class="text-center text-3xl font-semibold border-b-2">Total Products: <span id="totalProduct">0</span></h2>
+        <div class="overflow-x-auto">
+          <table class="table">
+            <!-- head -->
+            <thead class="bg-slate-300">
+              <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <!-- row 1 -->
+              <tr class="bg-slate-300">
+
+                <td></td>
+                <td colspan="2">Total Cost:</td>
+                <td></td>
+                <td></td>
+
+                <td id="totalCost"></td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- js files -->
+  <script src="tailwind.config.js"></script>
+  <script src="hello.js"></script>
+</body>
+
+</html>
